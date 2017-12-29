@@ -1,0 +1,12 @@
+@import "compass/reset";
+@import "compass/css3";
+$color: red;
+$fontsize: 12pt;
+body{
+	color: $color;
+}
+
+div{
+	font-size: $fontsize;
+	@include border-radius(5px);
+}

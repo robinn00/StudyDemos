@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webworker</title>
+</head>
+<body>
+<div id="txt"></div>
+<script type="text/javascript">
+var n = 0;
+var app = new Worker('pro.js');
+    app.onmessage = function (evt) {
+        n += 1;
+        document.getElementById("txt").innerText = evt.data;
+        app.postMessage("doxdox__"+evt.data);
+
+        if (n == 10){
+            app.terminate();
+            app = undefined;
+        }
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "gulpdemo",
+  "version": "1.0.1",
+  "description": "gulpdemo",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "gulpdemo"
+  ],
+  "author": "robinn",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-less": "^3.1.0"
+  }
+}

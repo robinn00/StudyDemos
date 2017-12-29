@@ -1,0 +1,16 @@
+.col-centered {
+  float: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row.row--no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > [class^="col-"], > [class*=" col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

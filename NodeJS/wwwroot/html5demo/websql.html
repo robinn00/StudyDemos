@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WEBSQL</title>
+</head>
+<body>
+<div id="dbmsg" style="font-size:12pt;color:red;"></div>
+<div id="tbmsg" style="font-size:9pt;color:green;"></div>
+
+<script type="text/javascript">
+var db = openDatabase("mydbdemo","1.0","sqlitedemo...",2*1024*1024*1024);
+    /*
+    db.transaction(function (tx) {
+        tx.executeSql("drop table userinfo");
+    });
+    */
+
+    db.transaction(function (tx) {
+        tx.executeSql("create table userinfo(id unique,uname text)",[],function (tx,result) {
+            window.alert("create Table success...");
+        },function (tx,error) {
+            window.alert("error");
+        });
+        tx.executeSql("insert into userinfo(id,uname) values(1,'roibisd')",[],function (tx,result) {
+            window.alert("create Table success....");
+        },function (tx,error) {
+            window.alert("error");
+        });
+        //document.querySelector("#dbmsg").innerHTML = "create Table success...";
+        //document.querySelector("#tbmsg").innerHTML = "insert table success....";
+    });
+
+</script>
+</body>
+</html>

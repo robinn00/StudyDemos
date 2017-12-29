@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<%
+    if (users){
+        %>
+         <h1><%=users.name%></h1>
+         <h1><%=users.sex%></h1>
+         <h1><%=users.age%></h1>
+        <%
+    }
+ %>
+
+<hr>
+<%
+    if(arrays_){
+        for(var i=0;i<arrays_.length;i++){
+            %>
+                <%=arrays_[i]%>
+                <br>
+            <%
+        }
+    }
+ %>
+
+<% include templs.ejs %>
+</body>
+</html>

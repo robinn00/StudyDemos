@@ -1,0 +1,21 @@
+body {
+  color: #f00;
+  font-size: 12pt;
+}
+h2 {
+  border: 1px solid #f00;
+}
+div.cls {
+  font-weight: bold;
+  color: #ffc0cb;
+}
+#dds {
+  font-size: 12pt;
+  border: 1px solid #f00;
+  width: 100px;
+}
+.doxcls {
+  line-height: 22px;
+  height: 30px;
+  float: left;
+}

@@ -1,0 +1,16 @@
+body {
+  background: -webkit-linear-gradient(20px top, #fff, #000);
+  background: -moz-linear-gradient(20px top, #fff, #000);
+  background: -o-linear-gradient(20px top, #fff, #000);
+  background: -ms-linear-gradient(20px top, #fff, #000);
+  background: linear-gradient(20px top, #fff, #000);
+  font-size: 12pt;
+}
+header #logo {
+  border: 1px solid #f00;
+  font-size: 12pt;
+}
+selection .sadfasf {
+  font-weight: bold;
+  color: #008000;
+}

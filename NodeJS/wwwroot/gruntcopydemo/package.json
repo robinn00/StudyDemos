@@ -1,0 +1,23 @@
+{
+  "name": "gruntcopydemo",
+  "version": "1.0.1",
+  "description": "gruntcopydemo",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "gruntcopydemo"
+  ],
+  "files": [
+    "README.md"
+  ],
+  "author": "robin",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^2.0.0",
+    "grunt-contrib-uglify": "^2.0.0"
+  }
+}

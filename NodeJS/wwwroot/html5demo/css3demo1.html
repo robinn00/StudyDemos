@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS3</title>
+  </head>
+  <body>
+  <style type="text/css">
+    body{
+      /*background-image: url("img_flwr.gif");*/
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    div.divcls{
+      border:2px solid;
+      border-top-color: red;
+      border-left-color:green;
+      border-right-color:blue;
+      border-bottom-color: #000;
+      border-radius: 25px;
+      background-color: pink;
+      width:200px;
+      height:150px;
+      margin-bottom:20px;
+      margin-top:100px;
+    }
+
+    div.divcls1{
+      width:200px;
+      height:150px;
+      border:2px solid red;
+      border-top-color: red;
+      border-left-color: blue;
+      border-right-color: green;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      margin-bottom:20px;
+    }
+
+    div.divcls2{
+      border:10px solid red;
+      width:200px;
+      height:150px;
+      border-image-source: url("border.png");
+      border-image-slice: 20 20;
+      border-image-width: 2 2;
+      border-image-outset: 1 1;
+      border-image-repeat: round;
+    }
+
+    div.divcls3{
+      border:2px solid green;
+      width:200px;
+      height:150px;
+      margin-top:20px;
+      box-shadow: 10px 10px 5px green;
+    }
+
+    div.divcls4{
+      border:2px solid green;
+      width:200px;
+      height:150px;
+      background-image: url("paper.gif");
+      border-radius: 30px;
+      border-radius: 10px 50px ;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    div.divcls5{
+      width:100%;
+      height:450px;
+      margin-top:20px;
+      display: block;
+      background-image: url("img_flwr.gif"),url("paper.gif");
+      background-position: right bottom,left top;
+      background-repeat: no-repeat,repeat;
+    }
+
+    div.divcls6{
+      margin-top:100px;
+      border:20px solid green;
+      padding:20px;
+      width:300px;
+      height: 200px;
+      background-image: url("paper.gif");
+      background-repeat: no-repeat;
+      background-origin:content-box;
+    }
+
+    div.divcls7{
+      width: 500px;
+      height:250px;
+      border:10px dotted green;
+      padding:20px;
+      margin-top:50px;
+      margin-bottom: 50px;
+      background-color: pink;
+      background-clip:border-box;
+    }
+
+
+    div.divcls8{
+      width:500px;
+      height:200px;
+      border:0px solid transparent;
+      background:linear-gradient(to right,red,yellow,blue);
+    }
+
+    div.divcls9{
+      width:500px;
+      height:200px;
+      border:0px solid transparent;
+      background:linear-gradient(to bottom,rgba(255, 0, 0, 1),rgba(0, 0, 255, 1));
+    }
+
+    div.divcls10{
+      width:500px;
+      height:200px;
+      border:0px solid transparent;
+      background:repeating-linear-gradient(red,yellow 10%,blue 20%);
+    }
+
+    div.divcls11{
+      width:500px;
+      height:200px;
+      background: radial-gradient(circle,red 5%,yellow 15%,blue 60%);
+    }
+
+    @font-face {
+      font-family: myfonts;;
+      src: url('FZSTK.TTF'),url('WINGDNG3.TTF');
+    }
+    div.divcls12{
+      font-size: 12pt;
+      font-weight: bold;
+      text-shadow: 0px 0px 10px red;
+      font-family: myfonts;
+      color:green;
+      border:2px solid red;
+      width:200px;
+      height:150px;
+      transform: rotateY(120deg);
+    }
+
+    div.dcls1{
+      width:200px;
+      height:100px;
+      transform:rotate(30deg);
+      -ms-transform:rotate(30deg);
+      -o-transform:rotate(30deg);
+      -webkit-transform:rotate(30deg);
+      background-color: pink;
+      border:2px solid pink;
+      z-index:0;
+    }
+
+
+    div.dcls2{
+      width:200px;
+      height:100px;
+      transform:translate(30px,10px);
+      background-color: green;
+      border:2px solid green;
+      z-index:999;
+    }
+
+
+    div.dcls3{
+      width:200px;
+      height:100px;
+      transform: scale(2,3);
+      background-color: blue;
+      border:2px solid blue;
+      z-index:999;
+    }
+
+
+    div.dcls4{
+      width:200px;
+      height:100px;
+      transition: width 1s,height 1s,transform 1s;
+      background-color: yellow;
+      border:2px solid pink;
+      cursor: pointer;
+    }
+    div.dcls4:hover{
+      width:500px;
+      height:400px;
+      transform:rotate(30deg);
+    }
+
+    /*
+    @keyframes colorani{
+      0%{background: red;}
+      30%{background: yellow;}
+      60%{background: blue; }
+      100%{background: green;}
+    }
+
+    @-webkit-keyframes colorani{
+      0%{background: red;}
+      30%{background: yellow;}
+      60%{background: blue; }
+      100%{background: green;}
+    }
+
+
+    @keyframes borderanimations{
+      from{border:2px solid green;}
+      to{border:10px solid pink;}
+    }
+
+    @-webkit-keyframes borderanimations{
+      from{border:2px solid green;}
+      to{border:10px solid pink;}
+    }
+    */
+
+    @keyframes posanimations{
+      0%{top:0px;left:0px;background:#fff;}
+      25%{top:0px;left:400px;background:red;}
+      50%{top:400px;left:400px;background:green;}
+      75%{top:400px;left:0px;background:yellow;}
+      100%{top:0px;left:0px;background:#fff;}
+    }
+
+    @-webkit-keyframes posanimations{
+      0%{top:0px;left:0px;background:#fff;}
+      25%{top:0px;left:400px;background:red;}
+      50%{top:400px;left:400px;background:green;}
+      75%{top:400px;left:0px;background:yellow;}
+      100%{top:0px;left:0px;background:#fff;}
+    }
+
+    div.dcls5{
+      width:200px;
+      height:200px;
+      background:pink;
+      border:0px solid red;
+      position: relative;
+      top:0px;
+      left:0px;
+      animation: posanimations 2s;
+      -webkit-animation:posanimations 2s;
+    }
+
+    div.dcls10{
+      width:500px;
+      height:200px;
+      border:2px solid green;
+      -webkit-column-count:3;
+      -webkit-column-rule:2px solid red;
+      resize:vertical;
+      overflow: auto;
+    }
+
+    div.dcls11{
+      width:30em;
+      height:1px solid;
+    }
+
+    div.box1{
+      box-sizing: border-box;
+      -moz-box-sizing:border-box;
+      width:50%;
+      border:1px solid red;
+      float: left;
+    }
+
+    img.imgcls{
+      border:1px solid green;
+      border-radius: 50%;
+      padding:20px;
+      box-shadow: 0px 0px 10px green;
+    }
+
+    div.bbs1{
+      width: 200px;
+      height:150px;
+      padding:20px;
+      box-sizing:border-box;
+      border:1px solid red;
+      text-align: left;
+    }
+
+    div.bbs2{
+      width:200px;
+      height: 150px;
+      border:1px solid green;
+      text-align: left;
+    }
+  </style>
+
+
+  <br>
+  <br>
+  <div class="bbs1">
+    当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界
+  </div>
+  <br>
+  <br>
+  <div class="bbs2">
+    当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界
+  </div>
+  <br>
+  <br>
+  <br>
+  <img src="paris.jpg" class="imgcls"/>
+  <br>
+  <br>
+  <br>
+  <div class="dcls11">
+    <div class="box1">box1...</div>
+    <div class="box1">box2...</div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="dcls10">当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="dcls5"></div>
+  <br>
+  <br>
+  <div class="dcls4"></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="dcls3"></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="dcls2"></div>
+  <br>
+  <div class="dcls1"></div>
+  <br>
+  <div class="divcls"></div>
+  <div class="divcls1"></div>
+  <div class="divcls2"></div>
+  <div class="divcls3"></div>
+  <br>
+  <div class="divcls4"></div>
+  <br>
+  <div class="divcls5"></div>
+  <br>
+  <br>
+  <div class="divcls6">doxinfo...</div>
+  <br>
+  <div class="divcls7"></div>
+  <br>
+  <br>
+  <div class="divcls8"></div>
+  <br>
+  <br>
+  <div class="divcls9"></div>
+  <br>
+  <div class="divcls10"></div>
+  <br>
+  <br>
+  <div class="divcls11"></div>
+  <br>
+  <br>
+  <div class="divcls12">用霓虹灯的光芒文字阴影</div>
+
+
+
+
+
+
+  </body>
+</html>

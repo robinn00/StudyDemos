@@ -1,0 +1,24 @@
+{
+  "name": "bowerdemo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "robinn"
+  ],
+  "license": "MIT",
+  "homepage": "index.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "foundation": "^5.5.3",
+    "bootstrap-cc": "^0.0.6"
+  }
+}

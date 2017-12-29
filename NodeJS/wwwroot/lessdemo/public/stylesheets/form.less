@@ -1,0 +1,112 @@
+@color: red;
+@bgcolor: pink;
+@fsize: 12pt;
+body{
+  color:@color;
+  background-color: @bgcolor;
+}
+
+@nicecolor: #ff0000;
+@lightcolor: @nicecolor + #222222;
+div.tablecss{
+  font-size: @fsize;
+  color: @lightcolor;
+}
+
+.bodered{
+  width:200px;
+  height:40px;
+  line-height: 40px;
+  border-bottom-style: solid;
+  border-bottom-color: red;
+  border-bottom-width: 1px;
+  display:block;
+}
+div#h2x{
+  width:200px;
+  height:40px;
+  display:block;
+}
+div#h2x a{
+  font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+  .bodered;
+}
+
+.post a{
+  .bodered;
+}
+
+
+#divcls{
+  border:1px solid red;
+  .pageline{
+    line-height: 20px;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-weight:bold;
+  }
+
+  .ah:hover{
+    text-decoration: underline;
+    font-size:12pt;
+  }
+}
+
+.clearfix{
+  clear:both;
+  display:block;
+  .pagenav{
+    border:1px solid red;
+    font-size:12pt;
+  }
+}
+
+@pxx_: 2px;
+@pxx1: @pxx_ + 10;
+@colorz: #ff0 / 4;
+div.gaogao{
+  border:@pxx_ solid red;
+  font-size:@pxx1;
+  color:@colorz;
+}
+
+
+@colory: #f0f0f0;
+@widths: 0.7;
+div#sdfaf{
+  width: percentage(@widths);
+  color: saturate(@colory,5%);
+}
+
+
+/* page less */
+#pages{
+  color:@colory;
+  @colory: #0000ff;
+  #navtools{
+    @colory: red;
+    color: @colory;
+  }
+}
+
+@imgsrc_: "images/";
+@border_s: border;
+.ds_@{border_s}{
+  @{border_s}:1px solid red;
+}
+
+.doxbg{
+  background: url("@{imgsrc_}3.jpg");
+}
+
+@vars_:bold;
+@cnts:"I am sdf";
+@h: 120px;
+.bx{
+  font-weight:@vars_;
+  content: @cnts;
+  height: @hx;
+  @hx: 200px;
+}
+
+@vars: @hx;
+@hx: 300px;

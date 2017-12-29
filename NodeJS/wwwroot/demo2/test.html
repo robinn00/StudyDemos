@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+
+
+
+<!-- 调用方式一： 直接再HTML里面调用 -->
+<script type="text/javascript">
+    var mediav_ad_pub = 'ccA7NV_1342768';
+    var mediav_ad_width = '640';
+    var mediav_ad_height = '90';
+
+    var ck_art_ad = function (pubid_,width_,height_) {
+        mediav_ad_pub = pubid_;
+        mediav_ad_width = width_;
+        mediav_ad_height = height_;
+        if (navigator.userAgent.indexOf('Windows NT 5.1') > -1){
+            document.writeln("<script type='text/javascript' language='JavaScript' src='http://static.mediav.com/js/mvf_g2.js'><\/script>");
+        }else{
+            document.writeln("<script type='text/javascript' language='JavaScript' src='https://static-ssl.mediav.com/js/mvf_g2.js'><\/script>");
+        }
+    }
+
+    //ck_art_ad('ccA7NV_1342768','640','90');
+    ck_art_ad('wMn837_1275326','336','280');
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+div.cls{
+    border:2px solid red;
+    width:200px;
+    height:100px;
+    text-align:center;
+    line-height:100px;
+    font-size:12pt;
+    font-family: "微软雅黑";
+    font-weight:bold;
+}

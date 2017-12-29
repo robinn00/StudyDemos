@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5-SSE</title>
+</head>
+<body>
+
+<div id="txt"></div>
+<script type="text/javascript">
+    var seobj = new EventSource("server.php");
+    seobj.onmessage =function (e) {
+        window.alert(e.data);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+$fs1: 12pt;
+$lh1: 20px;
+$fs2: 10pt;
+
+$color: #f00;
+$display: block;
+$hidden: none;
+
+body{
+  border:2px solid $color;
+  font-size:$fs1;
+  font-family: Arial;
+  line-height:$lh1;
+}
+
+div{
+  font-size:$fs2;
+  font-weight:bold;
+}
+
+nav{
+  ul{
+    color:$color;
+    font-size:$fs2;
+  }
+  li{
+    border:1px solid $color;
+    display: $display;
+  }
+  a{
+    text-decoration: $hidden;
+    font-family: Webdings;
+  }
+  a:hover{
+    color: $color;
+  }
+}

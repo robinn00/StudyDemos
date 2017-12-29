@@ -1,0 +1,23 @@
+body {
+  border: 2px solid #f00;
+  font-size: 12pt;
+  font-family: Arial;
+  line-height: 20px; }
+
+div {
+  font-size: 10pt;
+  font-weight: bold; }
+
+nav ul {
+  color: #f00;
+  font-size: 10pt; }
+nav li {
+  border: 1px solid #f00;
+  display: block; }
+nav a {
+  text-decoration: none;
+  font-family: Webdings; }
+nav a:hover {
+  color: #f00; }
+
+/*# sourceMappingURL=sty2.css.map */

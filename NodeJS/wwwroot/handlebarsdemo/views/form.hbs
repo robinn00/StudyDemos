@@ -1,0 +1,16 @@
+<img src="images/1.jpg"/>
+<hr>
+<img src="images/2.jpg"/>
+<hr>
+<img src="images/3.jpg"/>
+<hr>
+{{#each users}}
+    <h1>{{this}}</h1>
+{{/each}}
+
+{{#if forms}}
+    <h1 style="color:red;font-weight:bold;">{{forms}}</h1>
+{{else}}
+    <span>error</span>
+{{/if}}
+<hr>

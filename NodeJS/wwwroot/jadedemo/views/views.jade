@@ -1,0 +1,152 @@
+//
+   Created by admin on 2016/9/11.
+doctype html
+html(lang="en")
+    head
+        title jadeviews
+        meta(http-equiv="content-type",content="text/html;charset=utf-8")
+        link(rel="stylesheet",href="/stylesheets/style.css")
+        link(rel="stylesheet",href="/stylesheets/divcls.css")
+        script(language="javascript",type="text/javascript",src="/javascripts/mediav_ad.js")
+    body
+        h1 jadeh1
+        .cls doxdox
+        script
+            :coffee
+                console.log "hello"
+                ck_art_ad "ccA7NV_1342768","640","90"
+        for user in users
+            h2 #{user.name}==#{user.sex}==#{user.age}
+        - var friends = "xxxsfsadf3r3";
+        .dd#ddid= friends+" 454545"
+            h2 #{friends}
+        - var objs = {"book":"yamaxiunsa"};
+        - var nums = {"result":"7456"};
+        div= objs.book
+            span #{objs.book}
+        div "#{objs.book}" dxo "#{nums.result}"
+
+        p
+            | foo bar
+            | dox dox niam
+
+        p.
+            footer dox
+            sadfsadf
+
+        - var info={"books":"<em>World</em>"};
+        h2= info.books
+        div EM <strong>H3</strong>
+        h2!= info.books
+
+        h3 #{info.books}
+        h3 !{info.books}
+
+        input(placeholder="please input",type="text")
+        input(type="checkbox")
+
+        // this is a demo
+            sfasd dafdassdaf fd
+        br
+        <!--[if IE 8]>
+        script(src='/ie.js')
+        <![endif]-->
+
+        br
+
+        a(href='http://www.mozilla.com/en-US/firefox/') Get Firefox
+        br
+        - var book = "python";
+        - var flag = false;
+        if book == "javascript"
+            center javascript
+        else
+            em #{book}
+            br
+            b= book
+
+        unless flag
+            div(style="text-align:center;font-size:18pt;font-weight:bold;color:red;") #{flag}
+
+
+        select
+            each item,i in users
+                option(value=item.age) users: #{item.name}
+
+        hr
+        br
+        ul
+            for user_x in users
+                li
+                    a(href="#{user_x.sex}") #{user_x.name} #{user_x.age}
+                li: a(href="#{user_x.sex}") #{user_x.name} #{user_x.age}
+
+        case book
+            when "javascript"
+                h1 javascript
+            when "python"
+                h1(style="color:red;") "python"
+            when "php"
+                h2 php
+            default
+                h1(style="color:green;") default value
+
+        mixin book(name)
+            div&attributes(attributes)= name
+
+        +book("Book A")#first
+        +book("Book B")(title="book b")
+        +book("Book C").last
+
+        mixin dox(name,price)
+            h1.cls #{name} doxdox #{price}
+
+        +dox("robinn","12.56")
+
+        mixin book(name)
+            div&attributes(attributes)= name
+
+        +book("bookAAA")#bookid
+        +book("bookBBB").bookcls
+        +book("bookCCC")(style="color:red;")
+
+        mixin list_
+            ul
+                li: a(href="#") demo1
+                li: a(href="#") demo2
+                li: a(href="#") demo3
+                if block
+                    block
+        +list_()
+        +list_()
+            p.pcls doxdox
+        mixin set(array)
+            ul.ulcls
+                - each arr in array
+                    li: a(href=arr)= arr
+        +set(["person1","person2","person3"])
+
+        mixin setp(str)
+            .cls
+                .art
+                    h1= str
+                    if block
+                        block
+                    else
+                        p nothing....
+
+        +setp("hello jade..")
+        +setp("jade test")
+            h1 h1...
+            h2 h2...
+
+        mixin link(name,href)
+            a(class!=attributes.class,href=href)= name
+        +link("foot","http://www.baidu.com")(class="<b>btncls</b>")
+        :markdown
+            ### markdown
+            this is md demo
+        script
+            :coffee
+                window.alert "hello"
+                console.log "test"

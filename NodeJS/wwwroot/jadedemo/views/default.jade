@@ -1,0 +1,54 @@
+doctype html
+html(lang="end")
+    head
+        title jade Demo
+        meta(http-equiv="content-type",content="text/html;charset=utf-8")
+        link(rel="stylesheet",href="/stylesheets/style.css")
+        link(rel="stylesheet",href="/stylesheets/divcls.css")
+    body
+        img(src="images/1.jpg")
+        br
+        img(src="images/2.jpg")
+        br
+        hr
+        img(src="images/3.jpg")
+        hr
+        dl
+            dt who
+            dd one
+            dd two
+            dd thr
+        #getLineInfo
+        h1.hcls#hid applet
+        span a test demo
+        .small
+        script(type="text/javascript",language="javascript",src="javascripts/mediav_ad.js?pid=ccA7NV_1342768&w=640&h=90")
+        div.cls#diva express demo
+        form
+            input(name="username",type="text",id="username",value="")
+            input(name="submit" type="submit",id="submit",value="submit")
+        - console.log("test");
+        - var num="dox name";
+        - var userobj = {"username":"胡安德克"};
+        label #{num}
+        span= num
+        div #{userobj.username}
+        label=userobj.username
+
+        #spanid
+            .divcls
+                input.inputcls#filename.clspan
+        ul#ulid
+            li
+                a(href="#") atest
+            li
+                a(href="#") atest
+        ul#ulid1
+            li: a(href="#") atests
+            li: a(href="#") atests
+        select(name="sex")
+            option(value="1") male
+            option(value="0") female
+        #lists
+        each list in lists
+            p #{list.name} #{list.age} #{list.sex}

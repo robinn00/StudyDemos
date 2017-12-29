@@ -1,0 +1,24 @@
+$color: red;
+$fontsize: 12pt;
+@import "bourbon/bourbon";
+body{
+  color: $color;
+}
+
+div.cls{
+  font-size:$fontsize;
+}
+
+h1{
+  font-size: golden-ratio(14px,  1);
+  @include appearance(none);
+}
+div.ss{
+  @include animation(scale 1.0s ease-in, slide 2.0s ease);
+
+  // The above outputs the same CSS as using independent, granular mixins.
+  @include animation-name(scale, slide);
+  @include animation-duration(2s);
+  @include animation-timing-function(ease);
+  @include animation-iteration-count(infinite);
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEXDB</title>
+</head>
+<body>
+<script type="text/javascript">
+var request_ = window.indexedDB.open('persondemo');
+var dbresult;
+request_.onerror = function (e) {
+    console.log(e.currentTarget.error.message);
+};
+
+request_.onsuccess = function (e) {
+    dbresult = e.target.result;
+    console.log(dbresult);
+};
+
+request_.onupgradeneeded = function (e) {
+    var db = e.target.result;
+    var stuobj;
+    var personobj;
+    if(!db.objectStoreNames.contains("persons")){
+        stuobj = db.createObjectStore("persons",{keyPath:"id"});
+        stuobj.add({id:'1001',uname:'robinn',upws:'doxdox14512'});
+        stuobj.add({id:'1003',sex:'female',age:'45'});
+        stuobj.add({id:'2003',address:'sichuan chengdu'});
+    };
+
+    if(!db.objectStoreNames.contains("userinfo")){
+        personobj = db.createObjectStore("userinfo",{keyPath:"id"});
+        personobj.add({id:'1001',uname:'yangyang',upws:'456123213'});
+        personobj.add({id:'1003',sex:'male',age:'45'});
+        personobj.add({id:'2003',address:'sichuan deyang'});
+    };
+};
+</script>
+</body>
+</html>

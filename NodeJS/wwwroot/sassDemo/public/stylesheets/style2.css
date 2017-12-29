@@ -1,0 +1,16 @@
+body {
+  background: pink; }
+
+h2 {
+  color: red; }
+
+span.cls {
+  border: 1px solid red; }
+
+div#dicls {
+  font-size: 10pt; }
+
+hr {
+  display: none; }
+
+/*# sourceMappingURL=style2.css.map */
