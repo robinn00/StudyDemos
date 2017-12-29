@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+
+<div ng-app="myapp" ng-controller="myctrl">
+    <select ng-model="seljsonval" ng-options="x for x in jsonobj"></select>
+    {{seljsonval}}
+    <br>
+    <hr>
+    <select ng-model="seljsonval_1" ng-options="x for (x,y) in jsonobj1"></select>
+    {{seljsonval_1}}
+
+    <br>
+    <hr>
+    <select ng-model="seljsonval2" ng-options="x.uname for x in jsonobj2"></select><br>
+    {{seljsonval2.uname}}<br>
+    {{seljsonval2.upws}}<br>
+    {{seljsonval2.uemail}}<br>
+
+    <br>
+    <hr>
+    <select ng-model="seljsonval4" ng-options="y.uname for (x,y) in jsonobj4"></select><br>
+    {{seljsonval4.uname}}<br>
+    {{seljsonval4.upws}}<br>
+    {{seljsonval4.uage}}<br>
+</div>
+
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope) {
+        $scope.jsonobj = ["addr1","email1","uname1"];
+        $scope.jsonobj1 = {username:"robinn",userpws:'14545',uage:'52'};
+        $scope.jsonobj2 = [
+            {uname:'doxdox',upws:'4578',uemail:'dox@163.ocm'},
+            {uname:'aaaa',upws:'7811',uemail:'dosafx@163.ocm'},
+            {uname:'bbbb',upws:'12454',uemail:'1541x@163.ocm'},
+            {uname:'eerrewras',upws:'45121',uemail:'doxasdf@163.ocm'}
+        ];
+         $scope.jsonobj4 = {
+             obj1:{uname:'robinnxx',upws:'454512',uage:'78'},
+             obj2:{uname:'yangyang',upws:'123456',uage:'32'},
+             obj3:{uname:'doxdoxsa',upws:'sadf456',uage:'45'}
+         };
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS</title>
+    <script type="text/javascript" src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+
+<!-- ng-init="name='robinn';sex='male';" -->
+<div ng-app=""  ng-init="psp=['123','456','1215454'];num=10;i=5;name1='robinn';name2='doxdox';arry=[11,22,55,66];person={name:'yangyang',age:20,};">
+    <h3 style="color:red;">{{name}}</h3>
+    <h3 style="color:blue;">{{sex}}</h3>
+
+    <p>{{num * i}}</p>
+    <p ng-bind="num+i"></p>
+    <p>{{name1+" == "+name2}}</p>
+    <p>{{arry[2]}}</p>
+    <P ng-bind="arry[3]"></P>
+    <p>{{person.name + "=="+ person.age}}</p>
+    <P ng-bind="person.name +'++'+person.age"></P>
+
+    <ul>
+          <li style="color:red;" ng-repeat="num in psp">
+            {{num}}
+          </li>
+    </ul>
+
+</div>
+
+<!--
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("myappcontroller",function ($scope) {
+        $scope.name = "doxdox";
+        $scope.sex = "female.....";
+    });
+</script>
+-->
+
+</body>
+</html>

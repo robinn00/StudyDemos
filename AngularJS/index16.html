@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+</head>
+<body>
+
+<div ng-app="myapp" ng-controller="myctrl">
+    <h3>{{x1}}</h3>
+    <h2>{{y1}}</h2>
+    <h4>{{z1}}</h4>
+    <h2>{{u1}}</h2>
+    <h4>{{zz1}}</h4>
+</div>
+
+<script src="app/bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope) {
+        $scope.num1 = 5466;
+        $scope.x1 = "doxs";
+        $scope.y1 = angular.uppercase($scope.x1);
+        $scope.z1 = angular.lowercase($scope.y1);
+        $scope.u1 = angular.isString($scope.x1);
+        $scope.zz1 = angular.isNumber($scope.num1);
+    });
+</script>
+</body>
+</html>

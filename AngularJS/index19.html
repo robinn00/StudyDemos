@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+    <h2>{{num}}</h2>
+    <H3>{{result}}</H3>
+    <h3>{{totalNum}}</h3>
+</div>
+
+<script type="text/javascript">
+
+var app = angular.module("myapp",[]);
+    app.value("defaultVal",10);
+
+    app.service("Calc",function () {
+            this.sum = function (n1,n2) {
+                return n1+n2;
+        }
+    });
+
+    app.factory("MathService",function () {
+        var fact = {};
+        fact.mult = function (a) {
+            return a*a;
+        }
+        return fact;
+    });
+
+    app.service("CalcService",function (MathService) {
+        this.calcNum = function (a) {
+            return MathService.mult(a);
+        }
+    });
+
+    app.controller("myctrl",function ($scope,Calc,CalcService,defaultVal) {
+        $scope.num = defaultVal;
+        $scope.result = Calc.sum(200,defaultVal);
+        $scope.totalNum = CalcService.calcNum(20);
+    });
+</script>
+</body>
+</html>

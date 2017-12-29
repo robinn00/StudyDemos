@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+    <form novalidate>
+        UserName:  <input type="text" ng-model="infos.username"><br>
+        UserEmail: <input type="text" ng-model="infos.useremail"><br>
+        <p>{{infos}}</p>
+        <p>{{User}}</p>
+    </form>
+</div>
+
+<script src="app/bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope) {
+        $scope.infos = {username:'robinn',useremail:'dox@163.com'};
+        $scope.reset = function () {
+            $scope.User = angular.copy($scope.infos);
+        }
+        $scope.reset();
+    });
+</script>
+</body>
+</html>

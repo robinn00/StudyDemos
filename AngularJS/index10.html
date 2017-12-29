@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>django_migrations</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+    <button type="button" ng-disabled="flag">button</button><br>
+    <input type="checkbox" ng-model="flag" ><br>
+    {{flag}}<br>
+
+    <p ng-show="true">ng-show visible</p>
+    <p ng-show="false">ng-show hidden</p>
+    <hr>
+
+    <p ng-hide="true">ng-hide hidden</p>
+    <p ng-hide="false">ng-hide visible</p>
+
+    <p ng-show="num < 10">num < 10</p>
+</div>
+
+
+
+
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope) {
+        $scope.uinfo = "rob";
+        $scope.flag = true;
+        $scope.num = 30;
+    });
+</script>
+</body>
+</html>

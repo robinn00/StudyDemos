@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+
+</head>
+<body>
+<div ng-app="myapp">
+    <ul>
+        <li><a href="#/">HOME</a></li>
+        <li><a href="#/print">Print</a></li>
+        <li><a href="#/about">About</a></li>
+        <li><a href="#/case">Case</a></li>
+    </ul>
+
+    <div ng-view></div>
+</div>
+
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script type="text/javascript">
+    var app = angular.module("myapp",['ngRoute']);
+    app.config(["$routeProvider",function ($routeProvider) {
+        $routeProvider
+                .when("/",{template:'首页。。'})
+                .when("/print",{template:'打印机'})
+                .when("/about",{template:'关于我们'})
+                .when("/case",{template:'经典案例'})
+                .otherwise({redirectTo:'/'});
+    }]);
+</script>
+</body>
+</html>

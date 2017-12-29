@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myapp">
+    <run-cus></run-cus>
+    <br>
+    <div run-cus></div>
+    <br>
+    <div class="run-cus"></div>
+    <BR>
+    <hr>
+    <!-- directive: run-cus -->
+    <hr>
+</div>
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.directive("runCus",function () {
+        return {
+            replace:true,
+            restrict: 'EACM',
+            template : "<h2 style='color:red;'>自定义</h2>"
+        };
+    });
+</script>
+</body>
+</html>

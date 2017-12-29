@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+    <p>当前URL: {{locationUrl}}</p>
+
+    <hr>
+    <code><p ng-controller="myctrl_1">{{resbody}}</p></code>
+
+    <hr>
+    <p ng-controller="myctrl_2">{{infos}}</p>
+
+    <hr>
+    <p ng-controller="myctrl_3">{{timesx}}</p>
+
+    <hr>
+    <p ng-controller="myctrl4">
+        {{hexs}}
+        <br>
+        {{244 | myformat}}
+    </p>
+    <hr>
+    <p ng-controller="jsondemo">
+        {{jsontxt}}
+    </p>
+</div>
+
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope,$location) {
+        $scope.locationUrl = $location.absUrl();
+    });
+    
+    app.controller("myctrl_1",function ($scope,$http) {
+        $http.get("bower.json").then(function (response) {
+            $scope.resbody = response.data;
+        });
+    });
+    
+    app.controller("myctrl_2",function ($scope,$timeout) {
+        $scope.infos = "doxdox";
+        $timeout(function () {
+            $scope.infos = "3000ms doxdox";
+        },3000);
+    });
+    
+    app.controller("myctrl_3",function ($scope,$interval) {
+        $scope.timesx = "sdafklsdaf";
+        $interval(function () {
+            $scope.timesx = new Date().toLocaleTimeString();
+        },2000);
+    });
+
+    app.service("tostr_s",function () {
+        this.funcx = function (x) {
+            return x.toString(16);
+        }
+    });
+
+    app.controller("myctrl4",function ($scope,tostr_s) {
+        $scope.hexs = tostr_s.funcx(255);
+    });
+    app.filter("myformat",["tostr_s",function (tostr_s) {
+        return function (x) {
+            return tostr_s.funcx(x);
+        }
+    }]);
+    
+    app.controller("jsondemo",function ($scope,$http) {
+        $http.get("default.json").success(function (response) {
+            $scope.jsontxt = response.data;
+        });
+    });
+
+</script>
+</body>
+</html>

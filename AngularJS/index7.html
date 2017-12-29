@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="jsonctrl">
+    <table border="1">
+        <caption>json info</caption>
+        <thead>
+            <tr height="50px">
+                <td width="30px">Id</td>
+                <th width="100px">Name</th>
+                <th width="100px">Url</th>
+                <th width="100px">Country</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="info in jsontext">
+                <td ng-if="$odd" style="background-color: pink;">{{$index+1}}</td>
+                <td ng-if="$even">{{$index+1}}</td>
+                <td>{{info.Name}}</td>
+                <td>{{info.Url | uppercase}}</td>
+                <td>{{info.Country | lowercase}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("jsonctrl",function ($scope,$http) {
+        $http.get("json/default.json").then(function(response) {
+            $scope.jsontext = response.data.sites;
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+    <button>click</button>
+    <br>
+    <input type="text" ng-model="addr">
+    <p>{{addr}}</p>
+    <ul>
+        <li ng-repeat="uinfo in personname">{{uinfo}} __{{psp}}</li>
+    </ul>
+    <p>{{loaddata()}}</p>
+    <hr>
+    <p>{{psp | uppercase}}</p>
+    <P>{{uinfo|lowercase}}</P>
+    <P>{{50*0.8 | currency}}</P>
+    <ul>
+        <li ng-repeat="x in personname | orderBy">{{x}}</li>
+    </ul>
+    <input type="text" ng-model="pm">
+    <ul>
+        <li ng-repeat="info in user | orderBy:'upws'">{{info.uname}} == {{info.upws}}</li>
+    </ul>
+
+    <ul>
+        <li ng-repeat="ix in user | filter:pm">{{ix.uname + "==" + ix.upws}}</li>
+    </ul>
+
+</div>
+
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope,$rootScope) {
+        $scope.addr = "sichuang chengdu";
+        $scope.personname = ["dox1","1245as","feeling.."];
+        $rootScope.psp = "firefox...";
+        $scope.uinfo = "DAFDSAF";
+
+        $scope.user=[{uname:'robinn',upws:'124546'},{uname:'dox12',upws:'sfsa'},{uname:'gusx',upws:'abcd'}];
+
+        $rootScope.loaddata = function () {
+            return $scope.addr + " == "+$scope.personname[0];
+        };
+    });
+</script>
+</body>
+</html>

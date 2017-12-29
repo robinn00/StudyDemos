@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<style type="text/css">
+    input.ng-invalid{
+        background-color: pink;
+    }
+</style>
+<form name="myform" ng-app="" ng-init="uname='dosmine';">
+    UserName: <input type="email" name="myEmail" ng-model="uname" required><br>
+    <p>{{uname}}</p>
+    <hr>
+    <p>$vaild： {{myform.myEmail.$valid}}</p>
+    <p>$touched： {{myform.myEmail.$touched}}</p>
+    <p>$dirty： {{myform.myEmail.$dirty}}</p>
+</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>django_migrations</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+
+<div ng-app="myapp" ng-controller="myctrl1">
+    <button type="button" ng-click="count=count+1">click me!</button>
+    {{count}}
+</div>
+
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("myctrl1",function ($scope) {
+        $scope.count = 10;
+    });
+</script>
+</body>
+</html>

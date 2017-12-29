@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS</title>
+    <script type="text/javascript" src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="mainapp" ng-controller="maincontroller">
+
+    <input type="text" ng-model="name"><br>
+    <!--<p ng-bind="name"></p>-->
+    <P>{{name}}</P>
+    <p>{{sex}}</p>
+    <h2>{{5*50}}</h2>
+    <h3 style="color:red;">{{sex}}</h3>
+</div>
+
+
+<script type="text/javascript">
+    var app = angular.module("mainapp",[]);
+    app.controller("maincontroller",function ($scope) {
+        $scope.name = "w3ccccc";
+        $scope.sex = "female 1121211212";
+    });
+</script>
+
+</body>
+</html>

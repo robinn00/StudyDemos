@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>django_migrations</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+
+    <table border="1">
+        <caption>django_migrations</caption>
+        <thead>
+            <tr height="50px">
+                <td width="30px">Id</td>
+                <th width="100px">App</th>
+                <th width="100px">Name</th>
+                <th width="100px">Applied</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in jsoninfo">
+                <td ng-if="$odd" style="background-color: #ccc;">{{x.id}}</td>
+                <td ng-if="$even">{{x.id}}</td>
+                <td ng-if="$odd" style="background-color: #ccc;">{{x.app}}</td>
+                <td ng-if="$even">{{x.app}}</td>
+                <td ng-if="$odd" style="background-color: #ccc;">{{x.name}}</td>
+                <td ng-if="$even">{{x.name}}</td>
+                <td ng-if="$odd" style="background-color: #ccc;">{{x.applied}}</td>
+                <td ng-if="$even">{{x.applied}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope,$http) {
+        $http.get("http://localhost:1156/loadjson.php").then(function (response) {
+            $scope.jsoninfo = response.data.infos;
+        });
+    });
+</script>
+</body>
+</html>

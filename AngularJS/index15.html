@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+</head>
+<body>
+
+<form ng-app="myapp" ng-controller="myctrl" name="myform" novalidate>
+    UserName:<input type="text" ng-model="username"  name="uname" required><br>
+    <span style="color:red;" ng-show="myform.uname.$dirty && myform.uname.$invalid">
+        <span ng-show="myform.uname.$error.required">username is required</span>
+    </span><br>
+
+
+    UserEmail:<input type="email" ng-model="useremail" name="uemail" required><br>
+    <span style="color:blue;" ng-show="myform.uemail.$dirty && myform.uemail.$invalid">
+        <span ng-show="myform.uemail.$error.required">useremail is required</span>
+        <span ng-show="myform.uemail.$error.email">useremail is invalid</span>
+    </span>
+    <br>
+    <input type="submit"  ng-disabled="myform.uname.$dirty && myform.uname.$invalid || myform.uemail.$dirty && myform.uemail.$invalid">
+    <div ng-include="'demo1.html'"></div>
+</form>
+
+
+
+<script src="app/bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope) {
+        $scope.username = "hwfree";
+        $scope.useremail = "hf@hotmail.com";
+    })
+
+</script>
+
+</body>
+</html>

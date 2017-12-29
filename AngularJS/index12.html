@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>django_migrations</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+
+<div ng-app="myapp" ng-controller="myctrl">
+    <button type="button" ng-click="setflag()">显示/隐藏</button>
+    <div ng-show="flag">
+        username:<input type="text" ng-model="uname">
+        <br>
+        userpws:<input type="text" ng-model="upws">
+    </div>
+
+    <hr>
+    <div ng-controller="myctrl222">
+        <button type="button" ng-click="tot()">显示/隐藏</button>
+        <div ng-hide="falg_s">
+            email: <input type="text" ng-model="email">
+            <br>
+            addr: <input type="text" ng-model="addr">
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+var app = angular.module("myapp",[]);
+    app.controller("myctrl",function ($scope) {
+        $scope.uname = "freedom";
+        $scope.upws = "15512121";
+        $scope.flag = false;
+        $scope.setflag = function () {
+            $scope.flag = !$scope.flag;
+        }
+    });
+
+    app.controller("myctrl222",function ($scope) {
+        $scope.email = "robin@163.com";
+        $scope.addr = "四川成都...";
+        $scope.falg_s = false;
+        $scope.tot = function () {
+            $scope.falg_s = !$scope.falg_s;
+        }
+    });
+</script>
+
+</body>
+</html>

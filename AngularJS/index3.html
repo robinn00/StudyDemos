@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="app/bower_components/angular/angular.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+    username: <input type="text" ng-model="uname"><br>
+    {{uname}}
+    <form name="myform">
+        Email: <input type="email" name="addr" ng-model="text"><br>
+        {{text}}
+        <span ng-show="myform.addr.$error.email">不合格的Email地址</span>
+    </form>
+</div>
+<script type="text/javascript">
+var app = angular.module("myapp",[]);
+app.controller("myctrl",function ($scope) {
+    $scope.uname = "yxs";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+</head>
+<body>
+
+<div ng-app="myapp" init-content></div>
+
+<script src="app/bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+    var app = angular.module("myapp",[]);
+    app.directive("initContent",function () {
+        return {
+            template: "<h1 style='color:red;'>biaoti</h1>",
+        }
+    });
+</script>
+</body>
+</html>
