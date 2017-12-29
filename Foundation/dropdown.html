@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Foundation5.5.3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+<a href="#" class="button dropdown" data-dropdown="dd1" data-options="align:top;is_hover:true;">--select--</a>
+<ul id="dd1" class="f-dropdown content" data-dropdown-content>
+    <li><a href="#">WHO</a></li>
+    <li><a href="#">WHO</a></li>
+    <li><a href="#">WHO</a></li>
+    <li><a href="#">WHO</a></li>
+</ul>
+
+
+<div class="row">
+    <ul class="accordion" data-accordion data-options="multi_expand:true;">
+        <li class="accordion-navigation">
+            <a href="#demo1">WHO</a>
+            <div id="demo1" class="content">WHO....</div>
+        </li>
+
+        <li class="accordion-navigation">
+            <a href="#demo2">WHO222</a>
+            <div id="demo2" class="content">WHO222....</div>
+        </li>
+
+        <li class="accordion-navigation">
+            <a href="#demo3">WHO333</a>
+            <div id="demo3" class="content">WHO333....</div>
+        </li>
+
+    </ul>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="row">
+    <ul class="square">
+        <li>JAVASCRIPT</li>
+        <li>XML</li>
+        <li>ASP.NET</li>
+    </ul>
+
+    <ul class="circle">
+        <li>JAVASCRIPT</li>
+        <li>XML</li>
+        <li>ASP.NET</li>
+    </ul>
+
+
+    <ul class="no-bullet">
+        <li>JAVASCRIPT</li>
+        <li>XML</li>
+        <li>ASP.NET</li>
+    </ul>
+
+
+    <ul class="inline-list">
+        <li>JAVASCRIPT</li>
+        <li>XML</li>
+        <li>ASP.NET</li>
+    </ul>
+</div>
+
+
+<div class="row">
+
+    <ul class="tabs" data-tab>
+        <li class="tab-title active"><a href="#home">HOME</a></li>
+        <li class="tab-title"><a href="#m1">MENU1</a></li>
+        <li class="tab-title"><a href="#m2">MENU2</a></li>
+        <li class="tab-title"><a href="#m3">MENU3</a></li>
+    </ul>
+
+    <div class="tabs-content">
+        <div id="home" class="content active">
+            <p>home page....</p>
+        </div>
+
+        <div id="m1" class="content">
+            <p>MENU1....</p>
+        </div>
+
+        <div id="m2" class="content">
+            <p>MENU2....</p>
+        </div>
+
+        <div id="m3" class="content">
+            <p>MENU3....</p>
+        </div>
+    </div>
+
+</div>
+
+
+<br>
+<hr>
+<br>
+<div class="row">
+    <div class="pagination-centered">
+        <ul class="pagination">
+            <li class="arrow"><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li class="unavailable"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li class="current"><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li class="arrow"><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="row">
+    <ul class="breadcrumbs">
+        <li class="unavailable"><a href="#">MENU1</a></li>
+        <li><a href="#">MENU2</a></li>
+        <li class="current"><a href="#">MENU3</a></li>
+        <li><a href="#">MENU4</a></li>
+    </ul>
+</div>
+
+
+<br>
+<hr>
+<br>
+
+<div class="row">
+    <ul class="sub-nav">
+        <dt>Menu:</dt>
+        <dd><a href="#">MENU1</a></dd>
+        <dd><a href="#">MENU2</a></dd>
+        <dd class="active"><a href="#">MENU3</a></dd>
+        <dd><a href="#">MENU4</a></dd>
+    </ul>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="row">
+    <div class="medium-4 columns">
+        <ul class="pricing-table">
+            <li class="title">Basic</li>
+            <li class="price">$19.99</li>
+            <li class="description">Great for small business</li>
+            <li class="bullet-item">1GB Bandwidth</li>
+            <li class="bullet-item">15GB Storage</li>
+            <li class="bullet-item">24/7 Support</li>
+            <li class="cta-button"><a class="button" href="#">Buy</a></li>
+        </ul>
+    </div>
+
+    <div class="medium-4 columns">
+        <ul class="pricing-table">
+            <li class="title">Basic</li>
+            <li class="price">$19.99</li>
+            <li class="description">Great for small business</li>
+            <li class="bullet-item">1GB Bandwidth</li>
+            <li class="bullet-item">15GB Storage</li>
+            <li class="bullet-item">24/7 Support</li>
+            <li class="cta-button"><a class="button" href="#">Buy</a></li>
+        </ul>
+    </div>
+
+    <div class="medium-4 columns">
+        <ul class="pricing-table">
+            <li class="title">Basic</li>
+            <li class="price">$19.99</li>
+            <li class="description">Great for small business</li>
+            <li class="bullet-item">1GB Bandwidth</li>
+            <li class="bullet-item">15GB Storage</li>
+            <li class="bullet-item">24/7 Support</li>
+            <li class="cta-button"><a class="button" href="#">Buy</a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+
+
+<style type="text/css">
+.tabs-content > .content.active {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $(document).foundation();
+});
+</script>
+</body>
+</html>
