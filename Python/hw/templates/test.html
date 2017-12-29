@@ -1,0 +1,32 @@
+{% extends "header.html" %}
+{% block main %}
+<h2 style="color:red;font-family:'微软雅黑',font-size:12pt;">{{dox}}</h2>
+<br>
+<hr>
+<ul>
+{% for val in list %}
+    <li>{{val}}</li>
+{% endfor %}
+</ul>
+<br>
+<hr>
+{% if uname %}
+    <span style="color:red;font-size:10pt;font-weight:bold;">{{uname}}</span>
+{% else %}
+    <span style="color:red;font-size:10pt;font-weight:bold;">Nothing...</span>
+{% endif %}
+<br>
+<hr>
+    {% ifequal uname username%}
+        <div style="color:red;font-size:15pt;font-weight:bold;">{{uname}} == {{username}}</div>
+    {% else %}
+        <div style="color:red;font-size:15pt;font-weight:bold;">Notequal. ing....</div>
+    {% endifequal%}
+<hr>
+<br>
+{# this is nothing...#}
+{{dox|length}}
+
+{% endblock %}
+
+

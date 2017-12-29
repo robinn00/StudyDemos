@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+<meta charset="UTF-8">
+<title>{% block title %}{% endblock %}</title>
+{% endblock%}
+</head>
+<body>
+<div style="color:red;font-size:12pt;font-weight:bold;text-align:center;">{% block main %}{% endblock %}</div>
+<hr>
+<br>
+{% block foot %}
+<div style="color:red;font-size:12pt;font-weight:bold;text-align:center;">testing...</div>
+{% endblock %}
+</body>
+</html>

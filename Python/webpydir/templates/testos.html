@@ -1,0 +1,21 @@
+{% extends "t_base.html" %}
+
+{% block title %}testos.html.....{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        *{padding:0px;margin:0px;border:none;text-align:center;}
+        body{font-size:12pt;font-weight:bold;font-family:'微软雅黑',text-decoration:underline;overflow-x:hidden;width:100%;height:auto;}
+    </style>
+{% endblock %}
+
+{% block main %}
+    {% for line in lines%}
+        <h2>{{line}}</h2>
+    {% endfor %}
+{% endblock %}
+
+{% block foot %}
+    <h2 style="width:100%;height:60px;border:5px solid red;line-height:60px;">footing...</h2>
+{% endblock %}

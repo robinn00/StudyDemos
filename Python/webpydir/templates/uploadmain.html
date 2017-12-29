@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uploadform</title>
+</head>
+<body>
+
+<div id="main" style="width:100%;height:auto;overflow:hidden;text-align:center;line-height:100px;background-color:pink;border:3px solid red;">
+    <form name="myform" id="myform" action="/upload_tmp" method="post" enctype="multipart/form-data"
+          style="height:auto;overflow:hidden;border:2px solid green;">
+        <input id="upfile" name="upfile" type="file" value=""/>
+        <input type="submit" name="submit" value="upload"/>
+    </form>
+</div>
+
+<hr>
+<button id="addbtn" style="width:50px;font-weight:normal;">添加</button>
+
+<br>
+<button id="addhr">ADDHR</button>
+
+<script type="text/javascript">
+function $(idstr){
+    if (idstr){
+        return document.getElementById(idstr);
+    }else{
+        return null;
+    }
+}
+
+
+$("main").onclick = function(){
+    this.style.backgroundColor='blue';
+    this.style.border='3px solid yellow';
+}
+
+
+var flag = false;
+$("addbtn").onclick = function(){
+    if(!flag){
+        this.style.color="red";
+        this.style.fontWeight = 'bold';
+        this.style.width='100px';
+        flag = true;
+    }else{
+
+        this.style.color="#000";
+        this.style.fontWeight = 'normal';
+        this.style.width='50px';
+        flag = false;
+    }
+
+
+}
+
+
+
+$("addhr").onclick = function(){
+
+    var hrnod = document.createElement("hr");
+    $("main").appendChild(hrnod);
+
+    //window.document.body.appendChild($("main"));
+    $("inner").innerHTML = $("main").outerHTML;
+    window.alert($("main").outerHTML);
+}
+
+
+</script>
+
+
+<div id="inner">
+</div>
+</body>
+</html>

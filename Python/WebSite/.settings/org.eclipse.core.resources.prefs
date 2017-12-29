@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//dataManger/__init__.py=utf8
+encoding//dataManger/forms.py=utf-8
+encoding//dataManger/item.py=utf-8
+encoding//dataManger/templates=UTF-8
+encoding//dataManger/views.py=utf-8
+encoding//neteaseCrawler/__init__.py=utf8
+encoding//neteaseCrawler/html_download.py=utf-8
+encoding//neteaseCrawler/html_parser.py=utf-8
+encoding//neteaseCrawler/output_data.py=utf-8
+encoding//neteaseCrawler/url_manage.py=utf-8
+encoding/__init__.py=utf-8
+encoding/config.py=utf-8
+encoding/dataManger=UTF-8
+encoding/main_manage.py=utf-8
+encoding/run.py=utf-8

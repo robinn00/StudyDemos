@@ -1,0 +1,3 @@
+AddHandler cgi-script .py 
+DirectoryIndex py-cgi-index.py 
+AddType text/html .py

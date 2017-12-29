@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getform</title>
+</head>
+<body>
+
+<form name="postForm" id="postForm" action="/postx/" method="post">
+    {% csrf_token %}
+    Keywords: <input name="kw" id="kw" value="{{rlt}}"/><br><br>
+    <input type="submit" name="submit" value="search"/>
+</form>
+{% if rlt %}
+    <span style="border:2px solid red;">{{rlt}}</span>
+{% else %}
+    <span style="border:2px solid blue;">Nothing.....</span>
+{% endif %}
+</body>
+</html>

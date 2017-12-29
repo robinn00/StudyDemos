@@ -1,0 +1,98 @@
+iis + mysql + php
+
+一：iis10,iis7.5.iis6
+二：mysql
+三：php包
+
+
+
+一：OS （系统软件）
+macos,(ios)  android, windowphone,
+
+windows(xp,7,8.10,) server2000,20003.2008
+linux
+unix
+
+freebsd
+centos
+
+
+二：webserver （服务器脚本）
+web服务器
+iis,apache,tomcat,jboss,websphere,glassfish.nginx,http,weblogic,aws......
+
+
+
+
+三：dbserver
+access,sqlite3/sqlite (Filedb)
+mysql.oracle,sqlserver (DBMS)
+postgresql(面向对象可继承).
+
+T-SQL
+
+Basex (XMLDB) 
+XPATH XQUERY
+
+
+
+mongodb.redis.memecached.(nosql)
+key-value
+hashmap
+
+.....
+
+
+
+
+四：web devlang
+[server]
+.php
+.asp
+.aspx (.net)
+.jsp (java)
+.pl (perl)
+.py (python)
+.go (golang)
+.lua (lua)
+.scala (scala)
+.cgi (.shell,.)
+.rb (ruby)
+.sql
+
+
+
+
+
+[client] webbrowsesr [IE,Firefox ,chorme, safria,]
+html
+html5
+xhtml
+shtml
+js
+vbs
+css
+css3
+
+
+
+
+anglar js
+react
+jquery 
+zepto.js
+prototype
+bootstrap
+fundtion
+
+
+HTML(html5,xhtml,xml) VIEW
+JS (Jscript,javascript) Controller
+CSS (RENDER)
+
+
+
+
+
+
+

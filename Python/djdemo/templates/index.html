@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+{% include 'header.html' %}
+<hr>
+{% block main %}
+<a href="/">mainblock</a>
+{% endblock %}
+<hr>
+{% for line in rs %}
+<div style="border:1px solid red;">
+        id: {{line.id}}<br>
+        uname: {{line.u_name}}<br>
+        usex: {{line.u_sex}}<br>
+        u_addr: {{line.u_addr}}<br>
+        u_age: {{line.u_age}}<br>
+</div>
+{% endfor %}
+<br>
+{% include 'footer.html' %}
+</body>
+</html>

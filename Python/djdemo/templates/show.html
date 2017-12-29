@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block main %}
+{{block.super}}
+<br>
+<div style="background-color:pink;width:100%;height:20px;"></div>
+<a href="http://3g.kzdz120.com" style="color:red;">3g.kzdz120.com</a>
+<div style="background-color:pink;width:100%;height:20px;"></div>
+<br>
+<span>{{info}}</span>
+<br>
+<span>{{saveinfo}}</span>
+<br>
+<hr>
+{% for line in infox %}
+<span>{{line.id}}&nbsp;&nbsp;{{line.u_name}}&nbsp;&nbsp;{{line.u_sex}}&nbsp;&nbsp;{{line.u_addr}}&nbsp;&nbsp;{{line.u_age}}</span>
+<br>
+{% endfor %}
+<hr>
+<br>
+<br>
+<span style="color:red;font-size:12pt;font-weight:bold;">{{msgx}}</span>
+<br>
+<span>{{request.msginfo}}</span>
+<hr>
+{{request.user}}
+<br>
+{{request.user.is_authenticated}}
+<br>
+{{ request.path }}?{{request.GET.urlencode}}&x=1
+{% url 'addnum_2' 430 50 as addurl %}
+<a href="{{addurl}}">addurl</a>
+{% endblock %}
