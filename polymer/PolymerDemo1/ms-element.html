@@ -1,0 +1,59 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-input/iron-input.html">
+<dom-module id="ms-element">
+    <style>
+        div{
+            border:1px solid red;
+            background-color: #ccc;
+            font-size:12pt;
+            color:blue;
+            width:200px;
+            height:50px;
+            text-align:center;
+            line-height:50px;
+        }
+    </style>
+    <template>
+        <div>HELL {{pso}}</div>
+        <hr>
+        <span style="color:blue;font-size:12pt;font-weight:bold;">{{names}}</span>
+        <hr>
+        <input is="iron-input" bind-value="{{pso}}" placeholder="polymer"/>
+        <hr>
+        NUM:<span>{{nums}}</span>
+        <hr>
+        <button type="button" on-click="clicke">ClickMe!!!#{{nums}}</button>
+        <hr>
+        <content></content>
+    </template>
+
+    <script>
+        Polymer({
+            is: "ms-element",
+            ready: function () {
+                this.pso = "Polymer--ssss";
+                this.setTimer();
+                //this.innerHTML = "<h3>Polymer</h3>";
+            },
+            properties:{
+                names:{
+                    type:String,
+                    value:"doxdox"
+                },
+                nums:{
+                    type:Number,
+                    value:0
+                }
+            },
+            setTimer:function () {
+                var self = this;
+                setInterval(function () {
+                    self.nums += 1;
+                },1000);
+            },
+            clicke:function () {
+                window.alert("ssss");
+            }
+        });
+    </script>
+</dom-module>
