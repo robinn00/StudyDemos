@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+    <script type="text/javascript" src="node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="div1">
+    {{msg+"===4564541"}}
+    <br>
+    {{(msg+"===124541").split('').reverse().join('')}}
+    <hr>
+    <input type="text" v-model="msg">
+
+    <hr>
+    <select v-model="mysel" multiple>
+        <option value="AA">aiaiai...</option>
+        <option value="BB">bibibi...</option>
+        <option value="CC">caicaicai...</option>
+    </select>
+
+    <hr>
+    <div>selected:{{mysel | json}}</div>
+
+</div>
+
+<script type="text/javascript">
+    new Vue({
+        el: "#div1",
+        data:{
+            msg: "doxdox",
+            mysel: "BB",
+        },
+    });
+</script>
+</body>
+</html>

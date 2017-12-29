@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="VueJS/vue.min.js"></script>
+    <script type="text/javascript" src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
+</head>
+<body>
+
+<div class="container" id="myform">
+    <div class="row">
+        <div class="col-sm-4">
+            <form name="myform" >
+                <legend>添加书名</legend>
+                <div class="form-group">
+                    <label for="book_id">编号</label>
+                    <input type="text" id="book_id" class="form-control" v-model="book_s.id" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="book_name">书名</label>
+                    <input type="text" id="book_name" class="form-control" v-model="book_s.name">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="book_author">作者</label>
+                    <input type="text" id="book_author" class="form-control" v-model="book_s.author">
+                </div>
+
+                <div class="form-group">
+                    <label for="book_price">价格</label>
+                    <input type="text" id="book_price" class="form-control" v-model="book_s.price">
+                </div>
+
+                <div class="form-group">
+                    <input type="button" v-on:click="addbook()" class="btn btn-primary" id="submit" name="submit" value="添加">
+                    &nbsp;
+                    <input type="reset" class="btn btn-primary" id="reset" name="reset" value="重写">
+                </div>
+            </form>
+
+
+        </div>
+        <div class="col-sm-8">
+            <table class="table table-bordered table-striped">
+                <caption class="text-center">书列表</caption>
+                <thead>
+                <tr>
+                    <th @click="sortBy('id');" style="cursor: pointer">编号</th>
+                    <th @click="sortBy('name');" style="cursor: pointer">书名</th>
+                    <th @click="sortBy('author');" style="cursor: pointer">作者</th>
+                    <th @click="sortBy('price');" style="cursor: pointer">价格</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="book in books | orderBy param">
+                    <td>{{book.id}}</td>
+                    <td>{{book.name | reverse | uppercase}}</td>
+                    <td>{{book.author | uppercase | lowercase}}</td>
+                    <td>{{book.price}}</td>
+
+                    <td v-if="book.id%2==0"><button type="button" class="btn btn-danger" v-on:click="del_book(book)">删除</button></td>
+                    <td v-if="book.id%2!=0"><button type="button" class="btn btn-success" v-on:click="del_book(book)">删除</button></td>
+                </tr>
+                </tbody>
+
+            </table>
+            <div class="btn-success">{{sum}}</div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<style type="text/css">
+    [v-cloak]{
+        display:none;
+    }
+</style>
+
+<script type="text/javascript">
+    Vue.filter("reverse",function (value) {
+        return value.split('').reverse().join('');
+    });
+    var vm = new Vue({
+        el: "#myform",
+        ready:function () {
+          this.$http.get(this.url).then(function (response) {
+              this.$set("books",response.data);
+          },function (response) {
+              console.log(response);
+          });
+        },
+        data:{
+            url: 'books.json',
+            param:'',
+            book:{
+                id:"ang001",
+                name:"angularjs",
+                author:"ruso",
+                price:"20.00RMB",
+            },
+            book_s:{
+                id:0,
+                name:"",
+                author:"",
+                price:"",
+            },
+            books:[
+                {
+                    id:1,
+                    name:"34angularjs0001",
+                    author:"eqaacrus0001",
+                    price:50,
+
+                },
+                {
+                    id:3,
+                    name:"78angularjs0002",
+                    author:"eeerus0002",
+                    price:12,
+
+                },
+                {
+                    id:5,
+                    name:"12angularjs0003",
+                    author:"rus0003",
+                    price:25,
+
+                },
+                {
+                    id:2,
+                    name:"001angularjs0004",
+                    author:"lrrrus0002",
+                    price:30,
+
+                },
+            ],
+        },
+        methods:{
+            addbook: function () {
+                this.book_s.id = this.books.length+1;
+                this.books.push(this.book_s);
+                this.book_s = {
+                    id:0,
+                    name:"",
+                    author:"",
+                    price:"",
+                };
+            },
+            del_book: function (book) {
+                //var index = this.books.indexOf(book);
+                //this.books.splice(index,1);
+                this.books.$remove(book);
+            },
+            sortBy: function (param) {
+                this.param = param;
+            }
+        },
+        computed:{
+            sum: function () {
+                var result = 0;
+                for( var i=0;i<this.books.length;i++){
+                    result += Number(this.books[i].price);
+                }
+                return result;
+            }
+        },
+    });
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
