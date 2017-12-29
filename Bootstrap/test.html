@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calc</title>
+</head>
+<body>
+<input type="text" value="" id="num1" name="num1" placeholder="数字1"/>
+<select name="fx" id="fx" style="width: 50px;">
+    <option selected value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input type="text" value="" id="num2" name="num2" placeholder="数字2"/>
+<button id="calc" name="calc">=</button>
+<input type="text" value="" id="result" name="result"/>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#calc").click(function(){
+            var num1 = parseInt($("#num1").val());
+            var num2 = parseInt($("#num2").val());
+            var fx = $("#fx").val();
+
+                if(isNaN(num1)){
+                    window.alert("请输入数字1");
+                    return;
+            }
+
+            if(isNaN(num2)){
+                window.alert("请输入数字2");
+                return;
+            }
+
+
+            var result;
+            /*
+            switch(fx)
+            {
+                case "+":
+                    result = num1+num2;
+                    break;
+                case "-":
+                    result = num1-num2;
+                    break;
+                case "*":
+                    result = num1*num2;
+                    break;
+                case "/":
+                    result = num1/num2;
+                    break;
+                default:
+                    result = "";
+            }
+            */
+
+            result = eval(num1+fx+num2);
+            $("#result").val(result);
+
+
+
+
+        });
+    });
+
+</script>
+</body>
+</html>

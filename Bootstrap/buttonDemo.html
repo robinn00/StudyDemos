@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carouse</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-primary" data-loading-text="loading....">加载状态</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" data-toggle="button">buttontoggle</button>
+        </div>
+
+    </div>
+
+
+    <br><br><br>
+
+    <div class="row">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+                <input type="checkbox" value="男">男
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" value="女">女
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox" value="0">0
+            </label>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="row">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+                <input type="radio" name="sex" value="male">male
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="sex" value="female">female
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="sex" value="1">1
+            </label>
+        </div>
+    </div>
+
+
+</div>
+
+<br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <button type="button" class="btn btn-default popover-show"
+                data-toggle="popover"
+                title="leftbutton___title"
+                data-container="body"
+                data-placement="left"
+                data-content="leftbutton___body......">left button</button>
+
+        <button type="button" class="btn btn-primary popover-hide"
+                data-toggle="popover"
+                title="topbutton___title"
+                data-container="body"
+                data-placement="top"
+                data-content="topbutton___body......">top button</button>
+
+        <button type="button" class="btn btn-danger popover-destroy"
+                data-toggle="popover"
+                title="bottombutton___title"
+                data-container="body"
+                data-placement="bottom"
+                data-content="bottombutton___body......">bottom button</button>
+
+
+        <button type="button" class="btn btn-success popover-toggle"
+                data-toggle="popover"
+                title="rightbutton___title"
+                data-container="body"
+                data-placement="right"
+                data-content="rightbutton___body......">right button</button>
+
+        <br><br><br><br><hr>
+        <a id="acls" class="btn btn-success"
+           data-toggle="popover"
+           data-container="body"
+           data-placement="bottom"
+           title="<h2 style='color:red;'>title</h2>"
+           data-content="<p style='color:blue;font-size:12pt;'>body...</p>">
+            buttons
+        </a>
+
+        <br><br><br><br><hr>
+        <a href="#" class="btn btn-primary" data-placement="top" title="title" data-toggle="tooltip">haah</a><br>
+        <a href="#" class="btn btn-default" data-placement="right" title="title" data-toggle="tooltip">haah</a><br>
+        <a href="#" class="btn btn-info" data-placement="bottom" title="title" data-toggle="tooltip">haah</a><br>
+        <a href="#" class="btn btn-success" data-placement="left" title="title" data-toggle="tooltip">haah</a><br>
+
+        <br><br><br><br><hr>
+
+        <a class="btn btn_s"
+           data-placement="top"
+           data-toggle="tooltip"
+           title="<h2 style='color:red;'>titles</h2>">
+            buttons
+        </a>
+
+
+        <br><br><br><br>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modaldemo">click</button>
+
+        <div id="modaldemo" tabindex="-1" role="dialog" class="modal fade"
+             aria-hidden="true"
+             aria-labelledby="modaldemo_title">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                        <a href="#" id="modaldemo_title" class="modal-title">title....</a>
+                    </div>
+                    <div class="modal-body">
+                        <p>content...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-primary">close</button>
+                        <button type="button" class="btn btn-default">submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <ul class="nav nav-tabs" id="mytabs">
+            <li class="active"><a href="#" data-toggle="tab">w3c</a></li>
+            <li><a href="#" data-toggle="tab">iOS</a></li>
+            <li><a href="#" data-toggle="tab">java</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        //$("[data-toggle='popover']").popover();
+        $(".popover-show").popover("show");
+        $(".popover-hide").popover("hide");
+        $(".popover-destroy").popover("destroy");
+        //$(".popover-toggle").popover("toggle");
+        $("#acls").popover({html:true});
+        $(".btn-primary").tooltip();
+        $(".btn-info").tooltip();
+        $(".btn-success").tooltip();
+        $(".btn-default").tooltip();
+        $(".btn_s").tooltip({html:true});
+        $("#modaldemo").modal({keyboard:true});
+        $("#modaldemo").on("hide.bs.modal",function () {
+            window.alert("hide.bs.modal");
+        });
+
+        $("#modaldemo").on("hidden.bs.modal",function () {
+            window.alert("hidden.bs.modal");
+        });
+    })
+</script>
+<!--
+<script type="text/javascript">
+    $(function () {
+       $(".btn-primary").click(function () {
+           $(this).button("loading").delay(1000).queue(function () {
+               $(".btn-primary").text("");
+           });
+       });
+    });
+</script>
+-->
+</body>
+</html>

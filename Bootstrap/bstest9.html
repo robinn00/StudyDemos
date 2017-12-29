@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="panel-group" id="panel_p">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panel_p" href="#java_1">JAVA</a>
+                    </h4>
+                </div>
+                <div  id="java_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panel_p" href="#asp_1">ASP</a>
+                    </h4>
+                </div>
+                <div  id="asp_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panel_p" href="#php_1">PHP</a>
+                    </h4>
+                </div>
+                <div  id="php_1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo.
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <button id="btns" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#jsp_1">可折叠组件</button>
+        <p id="jsp_1" class="collapse">
+            Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+            vice lomo.
+        </p>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {$("#java_1").collapse("show");});
+    $(function () {$("#php_1").collapse("toggle");});
+    $(function () {
+        $("#asp_1").collapse({toggle:true});
+    });
+    
+    $(function () {
+        $("#asp_1").on("show.bs.collapse",function () {
+            window.alert("show.bs.collapse");
+        })
+
+        $("#php_1").on("shown.bs.collapse",function () {
+            window.alert("shown.bs.collapse");
+        });
+    });
+</script>
+</body>
+</html>

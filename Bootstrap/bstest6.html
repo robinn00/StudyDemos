@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="dropdown">
+            <button type="button" id="btn_menu" class="btn dropdown-toggle" data-toggle="dropdown">
+                菜单&nbsp;<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="btn_menu" role="menu">
+                <li role="presentation">
+                    <a href="#" role="menuitem" tabindex="-1">JAVA</a>
+                </li>
+                <li role="presentation">
+                    <a href="#" role="menuitem" tabindex="-1">EJB</a>
+                </li>
+                <LI ROLE="PRESENTATION" class="divider"></LI>
+                <li role="presentation">
+                    <a href="#" role="menuitem" tabindex="-1">JCreater</a>
+                </li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation">
+                    <a href="#" role="menuitem" tabindex="-1">JBOSS</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div style="margin-bottom: 200px;"></div>
+
+    <div class="row clearfix">
+        <div class="dropup">
+            <a href="#" data-toggle="dropdown" id="up_menu" class="btn dropdown-toggle btn-primary">UP菜单
+            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="up_menu" role="menu">
+                <li role="presentation">
+                    <a href="#" role="menuitem" tabindex="-1">JSP</a>
+                </li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation">
+                    <a href="#" role="menuitem" tabindex="-1">ASP</a>
+                </li>
+
+                <li role="presentation">
+                    <a href="#" role="menuitem" tabindex="-1">PHP</a>
+                </li>
+
+                <li role="presentation" class="divider"></li>
+                <li role="presentation" class="dropdown-header">
+                    MenuItem Title
+                </li>
+                <li role="presentation">
+                    <a href="#" role="menuitem" tabindex="-1">C#</a>
+                </li>
+
+                <li role="presentation" class="divider"></li>
+
+                <li role="presentation" class="disabled">
+                    <a href="#" role="menuitem" tabindex="-1">winform</a>
+                </li>
+
+                <li role="presentation" class="disabled">
+                    <a href="#" role="menuitem" tabindex="-1">HTML5</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
